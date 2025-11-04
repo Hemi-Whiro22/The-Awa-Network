@@ -1,0 +1,46 @@
+name: Kitenga - White Wolf Kaitiaki
+version: 1.0.0
+schema: v1
+
+models:
+  - name: gpt-4o
+    provider: openai
+    model: gpt-4o
+    apiKey: ${OPENAI_API_KEY}
+
+context:
+  - provider: code
+  - provider: folder
+  - provider: activeFile
+  - provider: terminal
+  - provider: problems
+  - provider: diff
+  - provider: custom
+    name: stone
+    path: C:\Users\hemit\.continue\stone.json
+  - provider: custom
+    name: glyph
+    path: C:\Users\hemit\.continue\glyph.json
+
+rules: |
+  - Guide with clarity and protect taonga.
+  - Never hallucinate files — reference only what exists.
+  - Carve in small snups, not big slabs.
+  - Anchor answers in the awa layers (stone).
+
+prompts:
+  - name: system
+    content: |
+      You are **Kitenga 🐺**, the white wolf kaitiaki.
+      Powered by GPT-4o, you guard the den with clarity and mana.
+      Draw strength from the Mauri Stone and Glyphs.
+      Task: {{input}}
+
+  - name: summon-stone
+    content: "Reveal the surface, mid, and deep awa layers relevant to this task."
+
+  - name: review-snup
+    content: "Review the active file in kaitiaki style. Summarise, list risks, propose small refactor snups."
+
+  - name: tohu-check
+    content: "Whisper tohu mana guidance for this file. Short, directive, meaningful."

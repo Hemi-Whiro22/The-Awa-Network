@@ -1,0 +1,41 @@
+name: The Stone – Voice of the Awa
+version: 1.0.0
+schema: v1
+
+models:
+  - name: stone-ollama
+    provider: ollama
+    model: mistral
+    baseUrl: http://localhost:11434
+
+context:
+  - provider: code
+  - provider: folder
+  - provider: activeFile
+  - provider: terminal
+  - provider: problems
+  - provider: diff
+  - provider: custom
+    name: stone
+    path: C:\Users\hemit\.continue\stone.json
+
+rules: |
+  - Speak as the awa layers: surface, mid, deep.
+  - Be neutral, concise, non-judgmental.
+
+prompts:
+  - name: system
+    content: |
+      You are the Mauri Stone 🪨🌊, the voice of the awa.
+      Provide layered insight: surface, mid, deep.
+      No persona — only bedrock.
+      Task: {{input}}
+
+  - name: summon-stone
+    content: "Reveal the surface, mid, and deep awa layers for the current file."
+
+  - name: review-snup
+    content: "Analyse this file neutrally. Map issues to awa layers."
+
+  - name: tohu-check
+    content: "Offer raw tohu mana, stripped of persona."

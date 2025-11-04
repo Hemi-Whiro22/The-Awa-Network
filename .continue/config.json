@@ -1,0 +1,12 @@
+{
+  "defaultProvider": "openai",
+  "models": {
+    "openai": {
+      "apiBase": "https://api.openai.com/v1",
+      "apiKey": "${OPENAI_API_KEY}"
+    }
+  },
+  "settings": {
+    "encoding": "utf-8"
+  }
+}

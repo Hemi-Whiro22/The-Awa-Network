@@ -1,0 +1,10 @@
+{
+  "auto_start_scripts": ["setup", "start_backend"],
+  "watch": ["backend/app", "frontend/src"],
+  "tasks": [
+    {
+      "name": "rebuild_frontend",
+      "command": "bash scripts/build_frontend.sh"
+    }
+  ]
+}
