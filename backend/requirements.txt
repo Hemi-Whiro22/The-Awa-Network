@@ -4,3 +4,13 @@ pydantic
 pgvector
 supabase
 openai
+python-dotenv
+httpx
+pytest
+pytest-asyncio
+continue-dev
+continue-openai
+continue-supabase
+sqlalchemy
+uvicorn[standard]
+psycopg2-binary
